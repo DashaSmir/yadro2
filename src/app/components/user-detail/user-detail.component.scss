@@ -1,0 +1,17 @@
+.user-detail-container {
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+
+  .actions {
+    margin-top: 24px;
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+  }
+
+  .loader {
+    text-align: center;
+    padding: 50px;
+  }
+}

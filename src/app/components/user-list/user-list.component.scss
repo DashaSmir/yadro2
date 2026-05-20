@@ -1,0 +1,15 @@
+.user-list-container {
+  padding: 24px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .filters {
+    margin-bottom: 16px;
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,24 @@
+<div class="user-detail-container" *ngIf="!loading; else loader">
+  <nz-card *ngIf="user" [nzTitle]="'Профиль: ' + user.name">
+    <nz-descriptions nzBordered [nzColumn]="1">
+      <nz-descriptions-item nzTitle="ID">{{ user.id }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Имя">{{ user.name }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Username">{{ user.username }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Email">{{ user.email }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Телефон">{{ user.phone }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Веб-сайт">{{ user.website }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Адрес">
+        {{ user.address?.street }}, {{ user.address?.suite }}, {{ user.address?.city }}, {{ user.address?.zipcode }}
+      </nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Компания">{{ user.company?.name }}</nz-descriptions-item>
+    </nz-descriptions>
+    <div class="actions">
+      <button nz-button [routerLink]="['/users', user.id, 'edit']">Редактировать</button>
+      <button nz-button nzType="default" routerLink="/users">Назад к списку</button>
+    </div>
+  </nz-card>
+</div>
+
+<ng-template #loader>
+  <div class="loader"><nz-spin></nz-spin></div>
+</ng-template>

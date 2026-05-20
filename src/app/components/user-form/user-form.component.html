@@ -1,0 +1,92 @@
+<div class="user-form-container">
+  <nz-card [nzTitle]="(isEditMode ? 'Редактирование' : 'Создание') + ' пользователя'">
+    <form nz-form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired>Имя</nz-form-label>
+        <nz-form-control [nzSpan]="14" nzHasFeedback [nzErrorTip]="nameError">
+          <input nz-input formControlName="name" placeholder="Введите имя" />
+          <ng-template #nameError>
+            <ng-container *ngIf="userForm.get('name')?.hasError('required')">Имя обязательно</ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired>Email</nz-form-label>
+        <nz-form-control [nzSpan]="14" nzHasFeedback [nzErrorTip]="emailError">
+          <input nz-input formControlName="email" placeholder="example@mail.com" />
+          <ng-template #emailError>
+            <ng-container *ngIf="userForm.get('email')?.hasError('required')">Email обязателен</ng-container>
+            <ng-container *ngIf="userForm.get('email')?.hasError('email')">Некорректный формат email</ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6">username</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <input nz-input formControlName="username" placeholder="Логин" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6">Телефон</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <input nz-input formControlName="phone" placeholder="+7 XXX XXX-XX-XX" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6">Веб-сайт</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <input nz-input formControlName="website" placeholder="https://" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-divider nzText="Адрес"></nz-divider>
+      <div formGroupName="address">
+        <nz-form-item>
+          <nz-form-label [nzSpan]="6">Улица</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input nz-input formControlName="street" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="6">Квартира</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input nz-input formControlName="suite" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="6">Город</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input nz-input formControlName="city" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="6">Индекс</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input nz-input formControlName="zipcode" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <nz-divider nzText="Компания"></nz-divider>
+      <div formGroupName="company">
+        <nz-form-item>
+          <nz-form-label [nzSpan]="6">Название</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input nz-input formControlName="name" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <nz-form-item>
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+          <button nz-button nzType="primary" [disabled]="userForm.invalid">Сохранить</button>
+          <button nz-button nzType="default" type="button" routerLink="/users">Отмена</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </nz-card>
+</div>
