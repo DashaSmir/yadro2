@@ -3,3 +3,14 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 }
+.ant-btn-primary {
+  background-color: #1E22AA;
+  border-color: #1E22AA;
+
+  &:hover, &:focus {
+    background-color:#DAF251 ;
+    border-color: #DAF251;
+    color: black;
+  }
+}
+

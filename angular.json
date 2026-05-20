@@ -42,7 +42,7 @@
                 "output": "/assets/"
               }
             ],
-            "styles": ["src/theme.less", "src/styles.scss"]
+            "styles": ["node_modules/ng-zorro-antd/ng-zorro-antd.less", "src/theme.less", "src/styles.scss"]
           },
           "configurations": {
             "production": {
