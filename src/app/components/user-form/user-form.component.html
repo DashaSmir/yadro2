@@ -23,9 +23,14 @@
       </nz-form-item>
 
       <nz-form-item>
-        <nz-form-label [nzSpan]="6">username</nz-form-label>
+        <nz-form-label [nzSpan]="6" nzRequired>username</nz-form-label>
         <nz-form-control [nzSpan]="14">
           <input nz-input formControlName="username" placeholder="Логин" />
+          <ng-template #nameError>
+            <ng-container *ngIf="userForm.get('name')?.hasError('required')">
+              Поле обязательно для заполнения
+            </ng-container>
+          </ng-template>
         </nz-form-control>
       </nz-form-item>
 
