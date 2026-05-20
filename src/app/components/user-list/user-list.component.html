@@ -12,8 +12,7 @@
     </nz-input-group>
     <ng-template #searchIcon><i nz-icon nzType="search"></i></ng-template>
   </div>
-
-  <nz-table #basicTable [nzData]="paginatedUsers" [nzLoading]="loading" nzBordered>
+  <nz-table #basicTable [nzData]="paginatedUsers" [nzLoading]="loading" [nzShowPagination]="false" nzBordered>
     <thead>
       <tr>
         <th>ID</th>
