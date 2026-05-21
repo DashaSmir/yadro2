@@ -8,14 +8,13 @@ Angular-приложение, которое взаимодействует с �
 ```bash
 git clone https://github.com/DashaSmir/yadro2.git
 cd yadro2
-
 ```
 
 2. Установить необходимые зависимости
 ```bash
 npm install
 ```
-
+3. Запустить сервер
 ```bash
 ng serve
 ```
